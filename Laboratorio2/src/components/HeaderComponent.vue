@@ -4,9 +4,9 @@
             <img src="/logoRes.jpg" alt="Logo de la aplicación" class="logo" />
         </div>
         <ul>
-            <li><a href="#" @click.prevent="cambiarSeccion('inicio')">Inicio</a></li>
-            <li><a href="#" @click.prevent="cambiarSeccion('acerca')">Acerca</a></li>
-            <li><a href="#" @click.prevent="cambiarSeccion('contacto')">Contacto</a></li>
+            <li><a href="#" @click.prevent="cambiarSeccion('servicios')">Servicios</a></li>
+            <li><a href="#" @click.prevent="cambiarSeccion('formulario')">Formulario</a></li>
+            <li><a href="#" @click.prevent="cambiarSeccion('sobre nosotros')">Sobre Nosotros</a></li>
         </ul>
         </nav>
     </template>
