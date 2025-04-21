@@ -6,15 +6,9 @@ const seccionActiva = ref('inicio');
 </script>
 
 <template>
-  <HeaderComponent @cambiar-seccion="seccionActiva = $event" />
-  <div class="contenido">
-    <div v-if="seccionActiva === 'inicio'">
-    </div>
-    <div v-if="seccionActiva === 'acerca'">
-    </div>
-    <div v-if="seccionActiva === 'contacto'">
-    </div>
-  </div>
+  <HeaderComponent/>
+
+  <RouterView/>
 </template>
 
 <style>

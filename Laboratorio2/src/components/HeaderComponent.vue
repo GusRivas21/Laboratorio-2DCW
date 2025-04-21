@@ -11,12 +11,13 @@
     <template>
         <nav class="navbar">
         <div class="logo-container">
-            <img src="/logoRes.jpg" alt="Logo de la aplicación" class="logo" />
+            <a href="/inicio"><img src="/logoRes.jpg" alt="Logo de la aplicación" class="logo"/></a>
         </div>
         <ul>
-            <li><a href="#" @click.prevent="cambiarSeccion('servicios')">Servicios</a></li>
-            <li><a href="#" @click.prevent="cambiarSeccion('formulario')">Formulario</a></li>
-            <li><a href="#" @click.prevent="cambiarSeccion('sobre nosotros')">Sobre Nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><router-link to="/formulario">Formulario</router-link>
+            </li>
+            <li><a href="#">Sobre Nosotros</a></li>
         </ul>
         </nav>
     </template>
@@ -26,7 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: rgb(6, 6, 6);
+            background-color: black;
             padding: 15px 20px;
             color: white;
             width: 100%;
@@ -39,8 +40,12 @@
             gap: 10px;
         }
 
+        a {
+            background-color: black;
+        }
+
         .logo {
-            width: 70px;
+            width: 80px;
             height: auto;
         }
 
