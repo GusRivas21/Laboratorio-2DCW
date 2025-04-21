@@ -14,10 +14,9 @@
             <a href="/inicio"><img src="/logoRes.jpg" alt="Logo de la aplicación" class="logo"/></a>
         </div>
         <ul>
-            <li><a href="#">Servicios</a></li>
-            <li><router-link to="/formulario">Formulario</router-link>
-            </li>
-            <li><a href="#">Sobre Nosotros</a></li>
+            <li><router-link to="/servicios">Servicios</router-link></li>
+            <li><router-link to="/formulario">Formulario</router-link></li>
+            <li><router-link to="/sobre_nosotros">Sobre Nosotros</router-link></li>
         </ul>
         </nav>
     </template>

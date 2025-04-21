@@ -8,14 +8,19 @@ const pedido = reactive({
     address: ""
 })
 
+const pedidoHecho = () =>{
+    console.log(pedido);
+}
+
 </script>
 
 <template>
 
+<div class="wallpaper">
     <h1>Ordene su Comida</h1>
 
     <div class="form-container">
-        <form class="form">
+        <form @submit.prevent="pedidoHecho" class="form">
             <div class="campo">
                 <label  for="name">Nombre</label>
                 <input v-model="pedido.name" type="text" id="name" placeholder="Su Nombre">
@@ -33,16 +38,24 @@ const pedido = reactive({
                 <input v-model="pedido.amount" type="number" id="amount" placeholder="0">
 
                 <label for="address">Direccion de Entrega</label>
-                <input v-model="pedido.address" type="text" id="address" placeholder="Su Direccion">
+                <textarea v-model="pedido.address" type="text" id="address" placeholder="Su Direccion"></textarea>
 
                 <button>Enviar</button>
             </div>
         </form>
     </div>
+</div>
 
 </template>
 
 <style scoped>
+
+    .wallpaper{
+        background-image: url(https://i.pinimg.com/736x/b8/57/f6/b857f6eeed86bc1eda743afec402b194.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    }
 
     h1 {
     margin-bottom: 1.5rem;
@@ -59,7 +72,7 @@ const pedido = reactive({
     }
 
     .form {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.3);
     padding: 2rem 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -95,6 +108,13 @@ const pedido = reactive({
     appearance: none;
     }
 
+    textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    }
 
     button {
     margin-top: 1rem;
