@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 
-const seccionActiva = ref('inicio');
 </script>
 
 <template>

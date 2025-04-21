@@ -1,11 +1,5 @@
     <script setup>
-        import { defineEmits } from 'vue';
 
-        const emit = defineEmits(['cambiar-seccion']);
-
-        const cambiarSeccion = (seccion) => {
-            emit('cambiar-seccion', seccion);
-        };
     </script>
 
     <template>

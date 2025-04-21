@@ -32,6 +32,7 @@ const pedidoHecho = () =>{
                         <option value="hamburguesa">Hamburguesa</option>
                         <option value="sushi">Sushi</option>
                         <option value="tacos">Tacos</option>
+                        <option value="Nachos">Nachos</option>
                     </select>
 
                 <label for="amount">Cantidad</label>
@@ -72,7 +73,7 @@ const pedidoHecho = () =>{
     }
 
     .form {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.5);
     padding: 2rem 2.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
