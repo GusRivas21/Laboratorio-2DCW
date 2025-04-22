@@ -1,6 +1,5 @@
 <script setup>
 import comidaImage from './img/comida.jpg';
-
 </script>
 
 <template>
