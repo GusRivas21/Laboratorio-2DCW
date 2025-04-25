@@ -1,5 +1,6 @@
 <script setup>
 import comidaImage from './img/comida.jpg';
+import FooterComponent from './FooterComponent.vue'
 </script>
 
 <template>
@@ -36,5 +37,6 @@ import comidaImage from './img/comida.jpg';
       </div>
     </section>
   </main>
-    
+  <FooterComponent />
+
 </template>
