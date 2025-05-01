@@ -1,9 +1,11 @@
 <script setup>
 import comidaImage from './img/comida.jpg';
 import FooterComponent from './FooterComponent.vue'
+import HeaderComponent from "@/components/HeaderComponent.vue";
 </script>
 
 <template>
+  <HeaderComponent />
 
 <main class="text-white">
     <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-4"
