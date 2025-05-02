@@ -8,6 +8,7 @@
             <a href="/"><img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="logo"/></a>
         </div>
         <ul>
+            <li><router-link to="/inicio">inicio</router-link></li>
             <li><router-link to="/servicios">Servicios</router-link></li>
             <li><router-link to="/formulario">Formulario</router-link></li>
             <li><router-link to="/sobre_nosotros">Sobre Nosotros</router-link></li>
