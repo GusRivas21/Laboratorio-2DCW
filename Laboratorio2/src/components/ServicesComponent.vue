@@ -3,7 +3,7 @@ import ServicesBG from '@/components/img/fondoServices.jpg'
 </script>
 
 <template>
-  <section class="relative bg-cover bg-center py-16 px-4" :style="{ backgroundImage: `url(${ServicesBG})` }">
+  <section class="relative bg-cover bg-center py-16 px-4" :style="{ backgroundImage: `url(https://i.pinimg.com/736x/59/19/34/591934ea0438900629d4f72f3eb1ae7d.jpg)` }">
     <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center text-gray-900">
       <div class="bg-white rounded-full shadow-lg p-6 w-64 h-64 flex flex-col justify-center items-center mx-auto transition-transform hover:scale-105">
         <img src="./img/pizza.png" alt="Atención a la Mesa" class="w-16 h-16 mb-4" />
