@@ -5,7 +5,7 @@
     <template>
         <nav class="navbar">
         <div class="logo-container">
-            <a href="/inicio"><img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="logo"/></a>
+            <a href="/"><img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="logo"/></a>
         </div>
         <ul>
             <li><router-link to="/servicios">Servicios</router-link></li>
