@@ -1,56 +1,76 @@
 <script setup>
-import {ref, reactive} from 'vue'
+    import {ref, reactive, computed} from 'vue'
 
-const pedido = reactive({
-    name: "",
-    amount: "",
-    food: "",
-    address: ""
-})
+    // Estado Reactivo para el pedido
+    // Se utiliza reactive para crear un objeto reactivo que contiene los datos del pedido
+    const pedido = reactive({
+        name: "",
+        amount: "",
+        food: "",
+        address: ""
+    })
 
-const pedidoHecho = () =>{
-    console.log(pedido);
-}
+    // Se utiliza ref para crear una referencia reactiva para la lista de comidas
+    // y para el estado de envío del pedido
+    const comidas = ref([
+        "Pizza", "Hamburguesa", "Sushi", "Tacos", "Nachos"
+    ]);
 
+    // Se utiliza ref para crear una referencia reactiva para el estado de enviado
+    // Se inicializa en false, indicando que el pedido no ha sido enviado
+    const enviado = ref(false)
+
+    // Se define una función que se ejecuta al enviar el formulario
+    // Esta función imprime el pedido en la consola y cambia el estado de enviado a true
+    const pedidoHecho = () =>{
+        console.log(pedido);
+        enviado.value = true
+    }
+
+    // Se utiliza computed para crear una propiedad computada que genera un resumen del pedido
+    // La propiedad computada se actualiza automáticamente cuando cambian los valores de pedido
+    const resumen = computed(() => {
+        return `${pedido.amount} x ${pedido.food} para ${pedido.name} en ${pedido.address}`
+    })
 </script>
 
 <template>
+    <div class="wallpaper">
+        <h1>Ordene su Comida</h1>
 
-<div class="wallpaper">
-    <h1>Ordene su Comida</h1>
+        <div class="form-container">
+            <form @submit.prevent="pedidoHecho" class="form">
+                <div class="campo">
+                    <label  for="name">Nombre</label>
+                    <input v-model="pedido.name" type="text" id="name" placeholder="Su Nombre" required>
 
-    <div class="form-container">
-        <form @submit.prevent="pedidoHecho" class="form">
-            <div class="campo">
-                <label  for="name">Nombre</label>
-                <input v-model="pedido.name" type="text" id="name" placeholder="Su Nombre">
+                    <label for="food">Seleccione su Comida</label>
+                        <select v-model="pedido.food">
+                            <option disabled value=""> Elija su Comida </option>
+                            <option v-for="comida in comidas" :key="comida" :value="comida">{{ comida }} </option>
+                        </select>
 
-                <label for="food" placeholder="elija">Seleccione su Comida</label>
-                    <select v-model="pedido.food">
-                        <option value="">Elija su Comida</option>
-                        <option value="pizza">Pizza</option>
-                        <option value="hamburguesa">Hamburguesa</option>
-                        <option value="sushi">Sushi</option>
-                        <option value="tacos">Tacos</option>
-                        <option value="Nachos">Nachos</option>
-                    </select>
+                    <label for="amount">Cantidad</label>
+                    <input v-model="pedido.amount" type="number" id="amount" placeholder="0" required>
 
-                <label for="amount">Cantidad</label>
-                <input v-model="pedido.amount" type="number" id="amount" placeholder="0">
+                    <label for="address">Direccion de Entrega</label>
+                    <textarea v-model="pedido.address" type="text" id="address" placeholder="Su Direccion" required></textarea>
 
-                <label for="address">Direccion de Entrega</label>
-                <textarea v-model="pedido.address" type="text" id="address" placeholder="Su Direccion"></textarea>
+                    <button>
+                        Enviar
+                    </button>
+                    <p v-if="enviado">¡Gracias por su pedido!</p>
+                    <p v-if="enviado && pedido.name && pedido.food && pedido.amount">
+                        {{ resumen }}
+                    </p>
 
-                <button>Enviar</button>
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
 </template>
 
 <style scoped>
-
     .wallpaper{
         background-image: url(https://i.pinimg.com/736x/b8/57/f6/b857f6eeed86bc1eda743afec402b194.jpg);
         background-size: cover;
@@ -106,6 +126,7 @@ const pedidoHecho = () =>{
     border-radius: 8px;
     font-size: 1rem;
     background-color: #fff;
+    color: #333;
     appearance: none;
     }
 
@@ -129,5 +150,4 @@ const pedidoHecho = () =>{
     cursor: pointer;
     transition: background-color 0.3s;
     }
-
 </style>
