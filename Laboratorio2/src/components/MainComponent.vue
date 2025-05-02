@@ -4,7 +4,7 @@ import comidaImage from './img/comida.jpg';
 
 <template>
 
-<main class="text-white">
+  <main class="text-white">
     <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-center px-4"
     :style="{backgroundImage: `url(${comidaImage})` }">
       <h1 class="text-5xl md:text-6xl font-extrabold text-yellow-400">GUS GU'S</h1>
@@ -36,5 +36,5 @@ import comidaImage from './img/comida.jpg';
       </div>
     </section>
   </main>
-    
+
 </template>

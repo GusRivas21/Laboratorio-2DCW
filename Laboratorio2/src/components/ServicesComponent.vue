@@ -3,19 +3,6 @@ import ServicesBG from '@/components/img/fondoServices.jpg'
 </script>
 
 <template>
-  <nav class="navbar">
-    <div class="logo-container">
-      <router-link to="/inicio">
-        <img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="logo" />
-      </router-link>
-    </div>
-    <ul>
-      <li><router-link to="/servicios">Inicio</router-link></li>
-      <li><router-link to="/formulario">Formulario</router-link></li>
-      <li><router-link to="/sobre_nosotros">Sobre Nosotros</router-link></li>
-    </ul>
-  </nav>
-
   <section class="relative bg-cover bg-center py-16 px-4" :style="{ backgroundImage: `url(${ServicesBG})` }">
     <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center text-gray-900">
       <div class="bg-white rounded-full shadow-lg p-6 w-64 h-64 flex flex-col justify-center items-center mx-auto transition-transform hover:scale-105">
