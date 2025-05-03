@@ -30,124 +30,79 @@
     // Se utiliza computed para crear una propiedad computada que genera un resumen del pedido
     // La propiedad computada se actualiza automáticamente cuando cambian los valores de pedido
     const resumen = computed(() => {
-        return `${pedido.amount} x ${pedido.food} para ${pedido.name} en ${pedido.address}`
+        return `${pedido.amount} ${pedido.food} para ${pedido.name} en ${pedido.address}`
     })
 </script>
 
 <template>
-    <div class="wallpaper">
-        <h1>Ordene su Comida</h1>
+    <div class="bg-cover bg-center min-h-screen" style="background-image: url('https://i.pinimg.com/736x/b8/57/f6/b857f6eeed86bc1eda743afec402b194.jpg');">
+        <h1 class="mb-6 text-center text-4xl text-white font-bold">Ordene su Comida</h1>
 
-        <div class="form-container">
-            <form @submit.prevent="pedidoHecho" class="form">
-                <div class="campo">
-                    <label  for="name">Nombre</label>
-                    <input v-model="pedido.name" type="text" id="name" placeholder="Su Nombre" required>
+        <div class="flex justify-center items-center p-8">
+            <form @submit.prevent="pedidoHecho" class="bg-white/50 p-8 rounded-xl shadow-lg w-full max-w-md">
+          <div class="flex flex-col gap-4">
+            <label for="name" class="font-bold text-black">Nombre</label>
+            <input
+              v-model="pedido.name"
+              type="text"
+              id="name"
+              placeholder="Su Nombre"
+              required
+              class="p-2 border  bg-white border-gray-300 rounded-lg text-base"
+            />
 
-                    <label for="food">Seleccione su Comida</label>
-                        <select v-model="pedido.food">
-                            <option disabled value=""> Elija su Comida </option>
-                            <option v-for="comida in comidas" :key="comida" :value="comida">{{ comida }} </option>
-                        </select>
+            <label for="food" class="font-bold text-black">Seleccione su Comida</label>
+            <select
+              v-model="pedido.food"
+              id="food"
+              required
+              class="p-2 border bg-white border-gray-300 rounded-lg text-base text-gray-700"
+            >
+              <option disabled value=""> Elija su Comida </option>
+              <option
+                v-for="comida in comidas"
+                :key="comida"
+                :value="comida"
+              >{{ comida }}</option>
+            </select>
 
-                    <label for="amount">Cantidad</label>
-                    <input v-model="pedido.amount" type="number" id="amount" placeholder="0" required>
+            <label for="amount" class="font-bold text-black">Cantidad</label>
+            <input
+              v-model="pedido.amount"
+              type="number"
+              id="amount"
+              placeholder="0"
+              required
+              class="p-2 border bg-white border-gray-300 rounded-lg text-base"
+            />
 
-                    <label for="address">Direccion de Entrega</label>
-                    <textarea v-model="pedido.address" type="text" id="address" placeholder="Su Direccion" required></textarea>
+            <label for="address" class="font-bold text-black">Dirección de Entrega</label>
+            <textarea
+              v-model="pedido.address"
+              id="address"
+              placeholder="Su Dirección"
+              required
+              class="w-full p-2 bg-white border-gray-300 rounded-lg resize-none"
+            ></textarea>
 
-                    <button>
-                        Enviar
-                    </button>
-                    <p v-if="enviado">¡Gracias por su pedido!</p>
-                    <p v-if="enviado && pedido.name && pedido.food && pedido.amount">
-                        {{ resumen }}
-                    </p>
+            <button
+              type="submit"
+              class="mt-4 p-3 w-full bg-black text-white rounded-lg text-base hover:bg-gray-800 transition"
+            >
+              Enviar
+            </button>
 
-                </div>
-            </form>
-        </div>
+            <p v-if="enviado" class="text-center text-green-700 font-semibold">
+              ¡Gracias por su pedido!
+            </p>
+            <p
+              v-if="enviado && pedido.name && pedido.food && pedido.amount"
+              class="text-center text-gray-800"
+            >
+              {{ resumen }}
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
 </template>
-
-<style scoped>
-    .wallpaper{
-        background-image: url(https://i.pinimg.com/736x/b8/57/f6/b857f6eeed86bc1eda743afec402b194.jpg);
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-    }
-
-    h1 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-size: 2.5rem;
-    color: white;
-    }
-
-    .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    }
-
-    .form {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    }
-
-    .campo {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    }
-
-    .campo label {
-    font-weight: bold;
-    color: black;
-    margin-bottom: 0.5rem;
-    }
-
-    .campo input {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    }
-
-    .campo select {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #333;
-    appearance: none;
-    }
-
-    textarea {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    outline: none;
-    }
-
-    button {
-    margin-top: 1rem;
-    padding: 0.8rem;
-    width: 100%;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    }
-</style>

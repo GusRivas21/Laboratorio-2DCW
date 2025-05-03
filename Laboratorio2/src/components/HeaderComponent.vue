@@ -3,61 +3,25 @@
 </script>
 
 <template>
-    <nav class="navbar">
-        <div class="logo-container">
-            <a href="/inicio"><img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="logo"/></a>
+    <nav class="flex items-center justify-between bg-black px-5 py-4 text-white w-full box-border">
+        <div class="flex items-center gap-2.5">
+            <a href="/inicio" class="bg-black">
+                <img src="./img/logoRes.jpeg" alt="Logo de la aplicación" class="w-20 h-auto" />
+            </a>
         </div>
-            <ul>
-                <li><router-link to="/inicio">inicio</router-link></li>
-                <li><router-link to="/servicios">Servicios</router-link></li>
-                <li><router-link to="/formulario">Formulario</router-link></li>
-                <li><router-link to="/sobre_nosotros">Sobre Nosotros</router-link></li>
-            </ul>
+        <ul class="flex gap-5 list-none p-0 m-0">
+            <li>
+                <router-link to="/inicio" class="text-white font-bold hover:underline">Inicio</router-link>
+            </li>
+            <li>
+                <router-link to="/servicios" class="text-white font-bold hover:underline">Servicios</router-link>
+            </li>
+            <li>
+                <router-link to="/formulario" class="text-white font-bold hover:underline">Formulario</router-link>
+            </li>
+            <li>
+                <router-link to="/sobre_nosotros" class="text-white font-bold hover:underline">Sobre Nosotros</router-link>
+            </li>
+        </ul>
     </nav>
 </template>
-
-<style scoped>
-    .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: black;
-        padding: 15px 20px;
-        color: white;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    a {
-        background-color: black;
-    }
-
-    .logo {
-        width: 80px;
-        height: auto;
-    }
-
-    .navbar ul {
-        list-style: none;
-        display: flex;
-        gap: 20px;
-        padding: 0;
-        margin: 0;
-    }
-
-    .navbar a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-    }
-
-    .navbar a:hover {
-        text-decoration: underline;
-    }
-</style>
