@@ -1,10 +1,24 @@
+# Node
 node_modules/
+
+# Vite
 dist/
-.env
-.DS_Store
+.vite/
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.idea/
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# Editor settings
 .vscode/
-*.local
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
