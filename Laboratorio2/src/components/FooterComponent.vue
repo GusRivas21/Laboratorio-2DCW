@@ -9,18 +9,13 @@
         <div style="flex: 1 1 220px;">
         <h2 style="font-size: 24px; margin-bottom: 15px;">GUS GU'S <span style="font-style: italic;">RESTAURANT</span></h2>
         <p>Sabor y calidad en cada plato.</p>
-        <div style="margin-top: 15px;">
-            <a href="#" style="margin-right: 10px; color: #fff;"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" style="margin-right: 10px; color: #fff;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #fff;"><i class="fab fa-twitter"></i></a>
-        </div>
         </div>
 
         <!-- Contacto -->
         <div style="flex: 1 1 180px;">
         <h4>Contacto</h4>
         <p style="margin-top: 10px;">Tel: +503 0000 0000</p>
-        <p>Email: GUS GU'S@gmail.com</p> 
+        <p>Email: GUS GU'S@gmail.com</p>
         </div>
 
         <!-- Mapa -->
